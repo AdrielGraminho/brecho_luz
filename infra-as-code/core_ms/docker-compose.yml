@@ -1,0 +1,17 @@
+version: '3.5'
+
+services: 
+    db:
+        image: postgres:9.4        
+        ports:
+            - "5432:5432"
+        networks:
+            - employee-db        
+        environment:
+            POSTGRES_PASSWORD: "17142522"
+            POSTGRES_USER: brecho_luz
+            POSTGRES_DB: brecho_luz
+        volumes:
+            - ../db/pgdata:/var/lib/postgresql/data
+networks:
+  employee-db: 
